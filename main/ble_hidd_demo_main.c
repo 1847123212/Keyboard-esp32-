@@ -56,7 +56,7 @@ static bool send_volum_up = false;
 
 static void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *param);
 
-#define HIDD_DEVICE_NAME            "HID"
+#define HIDD_DEVICE_NAME            "70%KeyBoard_IOTsuyaun"
 static uint8_t hidd_service_uuid128[] = {
     /* LSB <--------------------------------------------------------------------------------> MSB */
     //first uuid, 16bit, [12],[13] is the value
@@ -165,19 +165,19 @@ void hid_demo_task(void *pvParameters)
     while(1) {
         vTaskDelay(2000 / portTICK_PERIOD_MS);
         if (sec_conn) {
-            ESP_LOGI(HID_DEMO_TAG, "Send the volume");
-            send_volum_up = true;
-            //uint8_t key_vaule = {HID_KEY_A};
-            //esp_hidd_send_keyboard_value(hid_conn_id, 0, &key_vaule, 1);
-            esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_UP, true);
-            vTaskDelay(3000 / portTICK_PERIOD_MS);
-            if (send_volum_up) {
-                send_volum_up = false;
-                esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_UP, false);
-                esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_DOWN, true);
-                vTaskDelay(3000 / portTICK_PERIOD_MS);
-                esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_DOWN, false);
-            }
+            // ESP_LOGI(HID_DEMO_TAG, "BT Connecting success");
+            // send_volum_up = true;
+            // //uint8_t key_vaule = {HID_KEY_A};
+            // //esp_hidd_send_keyboard_value(hid_conn_id, 0, &key_vaule, 1);
+            // esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_UP, true);
+            // vTaskDelay(3000 / portTICK_PERIOD_MS);
+            // if (send_volum_up) {
+            //     send_volum_up = false;
+            //     esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_UP, false);
+            //     esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_DOWN, true);
+            //     vTaskDelay(3000 / portTICK_PERIOD_MS);
+            //     esp_hidd_send_consumer_value(hid_conn_id, HID_CONSUMER_VOLUME_DOWN, false);
+            // }
         }
     }
 }
@@ -186,6 +186,10 @@ void hid_demo_task(void *pvParameters)
 void app_main(void)
 {
     esp_err_t ret;
+    
+    gpio_pad_select_gpio(GPIO_NUM_16);
+    gpio_set_direction(21, GPIO_MODE_OUTPUT);
+    gpio_set_level(GPIO_NUM_16, 0);
 
     // Initialize NVS.
     ret = nvs_flash_init();

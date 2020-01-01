@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/iotsuyuan/esp/esp-idf/components/freertos/include",
+                "/home/iotsuyuan/esp/xtensa-esp32-elf/xtensa-esp32-elf/include",
+                "/home/iotsuyuan/esp/esp-idf/components/xtensa/include",
+                "/home/iotsuyuan/esp/esp-idf/components/xtensa/esp32/include",
+                "/home/iotsuyuan/esp/esp-idf/components/esp_rom/include",
+                "/home/iotsuyuan/esp/esp-idf/components/soc/esp32/include",
+                "/home/iotsuyuan/esp/esp-idf/components/esp_common/include",
+                "/home/iotsuyuan/esp/esp-idf/components/heap/include",
+                "/home/iotsuyuan/esp/esp-idf/components/esp_wifi/include",
+                "/home/iotsuyuan/esp/esp-idf/components/esp_event/include",
+                "/home/iotsuyuan/esp/esp-idf/components/esp_netif/include",
+                "/home/iotsuyuan/esp/esp-idf/components/esp_eth/include",
+                "/home/iotsuyuan/esp/esp-idf/components/driver/include",
+                "/home/iotsuyuan/esp/esp-idf/components/soc/include",
+                "/home/iotsuyuan/esp/esp-idf/components/tcpip_adapter/include",
+                "/home/iotsuyuan/esp/esp-idf/components/lwip/lwip/src/include",
+                "/home/iotsuyuan/esp/esp-idf/components/coap/libcoap/examples/lwip",
+                "/home/iotsuyuan/esp/esp-idf/components/lwip/port/esp32/include",
+                "/home/iotsuyuan/esp/esp-idf/components/lwip/include/apps",
+                "/home/iotsuyuan/esp/esp-idf/components/log/include",
+                "/home/iotsuyuan/esp/esp-idf/components/nvs_flash/include",
+                "/home/iotsuyuan/esp/esp-idf/components/spi_flash/include",
+                "/home/iotsuyuan/esp/esp-idf/components/bt/include",
+                "/home/iotsuyuan/esp/esp-idf/components/bt/host/bluedroid/api/include/api",
+                "/home/iotsuyuan/esp/esp-idf/components/esp32/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
